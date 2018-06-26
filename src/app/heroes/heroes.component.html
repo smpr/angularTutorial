@@ -1,14 +1,14 @@
 
 <h2>My Heroes</h2>
-<ul class="heroes">
-  <!-- the class.selected refers to the css styling on the component.css page-->
+<!-- <ul class="heroes">
+  the class.selected refers to the css styling on the component.css page
   <li *ngFor="let hero of heroes"
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)">
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
- <!-- selectedHero points to the .ts component file and constructors-->
+ selectedHero points to the .ts component file and constructors
 <div *ngIf="selectedHero">
  
   <h2>{{ selectedHero.name | uppercase }} Details</h2>
@@ -19,6 +19,15 @@
     </label>
   </div>
  
-</div>
+</div> -->
+<ul class="heroes">
+    <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+  </ul>
+  <!-- this displays the selected hero component after the onclick event -->
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 
