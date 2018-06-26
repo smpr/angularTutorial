@@ -2,8 +2,14 @@
 <div style="text-align:center">
   <h1>
     <h1>{{ title }}</h1>
+    <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/heroes">Heroes</a>
+      </nav>
     <!--This pull the heroes compononent and dispays it here-->
-    <app-heroes></app-heroes>
+    <!--<app-heroes></app-heroes>-->
+    <!-- this starts the router up-->
+    <router-outlet></router-outlet>
     <!-- this is the mesages component-->
     <app-messages></app-messages>
   </h1>

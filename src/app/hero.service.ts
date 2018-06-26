@@ -8,13 +8,30 @@ import { HEROES } from './mock-heroes'
   providedIn: 'root'
 })
 export class HeroService {
+  // constructor(private messageService: MessageService) { }
+  // //this grabs the heroes based on the hero clicked
+  // getHeroes(): Observable<Hero[]> {
+  //   //sends a message to message service
+  //   // TODO: send the message _after_ fetching the heroes
+  //   this.messageService.add('HeroService: fetched heroes');
+  //   return of(HEROES);
+  // }
+  // getHero(id: number): Observable<Hero> {
+  //   // TODO: send the message _after_ fetching the hero
+  //   this.messageService.add(`HeroService: fetched hero id=${id}`);
+  //   return of(HEROES.find(hero => hero.id === id));
+  // }
   constructor(private messageService: MessageService) { }
-  //this grabs the heroes based on the hero clicked
+ 
   getHeroes(): Observable<Hero[]> {
-    //sends a message to message service
     // TODO: send the message _after_ fetching the heroes
     this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
-
+ 
+  getHero(id: number): Observable<Hero> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
 }
